@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8"/>
+   <title>My Book List</title>
+ </head>
+ <body>
+   <h1>My Book List</h1>
+	<script>
+		var books = [
+			{title: "Everything is Illuminated",
+			 author: "Jonathan Safran Foer",
+			 photo: "http://d.gr-assets.com/books/1327865538l/256566.jpg",
+			 alreadyRead: true},
+
+			{title: "The Hobbit",
+			 author: "J.R.R. Tolkien",
+			 photo: "http://upload.wikimedia.org/wikipedia/en/3/30/Hobbit_cover.JPG",
+			 alreadyRead: false},
+
+			{title: "The Cell",
+			 author: "Stephen King",
+			 photo: "http://jameshowden.com/wordpress/wp-content/uploads/2014/10/StephenKingCellPlainCover.jpg",
+			 alreadyRead: true}
+		];
+
+		var body = document.getElementsByTagName('body')[0];
+		var ul = document.createElement('ul');
+		body.appendChild(ul);
+		
+		for (var count = 0; count < books.length; count++) {
+			var book = books[count];
+			var li = document.createElement('li');
+			var liText = document.createTextNode(book.title + " by " + book.author + " ");
+			li.appendChild(liText);
+			ul.appendChild(li);
+			var image = document.createElement('img');
+			image.src = book.photo
+			li.appendChild(image);
+
+			image.style.height = "100px";
+			
+			if (book.alreadyRead === true) {
+				image.style.opacity = 0.1
+			};
+		}
+	</script>
+  </body>
+ </html>

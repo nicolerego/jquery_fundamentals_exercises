@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8"/>
+   <title>About Me</title>
+ </head>
+ <body>
+   <h1>About Me</h1>
+
+   <ul>
+     <li>Nickname: <span id="nickname"></span>
+     <li>Favorites:  <span id="favorites"></span>
+     <li>Hometown: <span id="hometown"></span>
+    </ul>
+
+	<style>
+		.listItem { color: red; }
+	</style>
+	
+	<script>
+		var body = document.getElementsByTagName('body')[0];
+		body.style.fontFamily =  "Arial, sans-serif";
+
+		var nickname = document.getElementById("nickname");
+		nickname.innerHTML = "Nikki";
+		var favorites = document.getElementById("favorites");
+		favorites.innerHTML = "Nutella";
+		var hometown = document.getElementById("hometown");
+		hometown.innerHTML = "Etobicoke";
+
+		var listItems = document.getElementsByTagName('li');
+		for (var i =0; i < listItems.length; i++) {
+		  var listItem = listItems[i].className = "listItem";
+		}
+
+		var photo = document.createElement('img');
+		photo.src = "https://avatars3.githubusercontent.com/u/8106303?v=3&s=160";
+		body.appendChild(photo);
+	</script>
+  </body>
+ </html>
